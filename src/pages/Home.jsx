@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 const Home = () => {
   return <Test>DO-SOPT-SOPKATHON-WEB-1</Test>;
 };
