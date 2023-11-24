@@ -1,5 +1,3 @@
-const Home = () => {
-  return <></>;
-};
+function Home() {}
 
 export default Home;
