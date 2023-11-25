@@ -103,6 +103,7 @@ const Input = styled.input`
   ${({ theme }) => theme.fonts.body2};
   border: none;
   background-color: ${({ theme }) => theme.colors.gray09};
+  color: ${({ theme }) => theme.colors.gray02};
 `;
 const InputBox2 = styled(InputBox)`
   margin-bottom: 16.2rem;

@@ -21,7 +21,13 @@ function LetterPopup({ setIsShow }) {
     const path = location.pathname;
     const idFromURL = path.substring(path.lastIndexOf("/") + 1);
     try {
-      console.log(receiverName, idFromURL, receiverEmail, candleColor, letterContent);
+      console.log(
+        receiverName,
+        idFromURL,
+        receiverEmail,
+        candleColor,
+        letterContent,
+      );
       const response = await axios.post(
         "https://www.sopkathon-web-1.p-e.kr/api/letters",
         {
@@ -62,7 +68,6 @@ function LetterPopup({ setIsShow }) {
         onChange={(e) => setReceiverEmail(e.target.value)}
       />
       <ColorPalette>
-
         <BtnWrapper type="button" onClick={() => setCandleColor("RED")}>
           <BtnImg src={ChoiceRed} alt="choicered" />
         </BtnWrapper>
@@ -70,7 +75,6 @@ function LetterPopup({ setIsShow }) {
           <BtnImg src={ChoicePurple} alt="choicepurple" />
         </BtnWrapper>
         <BtnWrapper type="button" onClick={() => setCandleColor("BLUE")}>
-
           <BtnImg src={ChoiceBlue} alt="choiceblue" />
         </BtnWrapper>
       </ColorPalette>
@@ -118,7 +122,7 @@ const InfoInput = styled.input`
   height: 5.2rem;
   border-radius: 1.2rem;
   background-color: ${({ theme }) => theme.colors.gray09};
-  color: ${({ theme }) => theme.colors.gray06};
+  color: ${({ theme }) => theme.colors.gray02};
   border: none;
   text-align: center;
   ${({ theme }) => theme.fonts.body2};
