@@ -9,6 +9,7 @@ function SignUpPage() {
   const [agentname, setAgentname] = useState("");
   const [agentEmail, setagentEmail] = useState("");
   const [userId, setUserId] = useState("");
+  let id;
   const handleUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -27,9 +28,9 @@ function SignUpPage() {
           name: username,
         },
       );
-      const ID = response.data.data.userId;
+      id = response.data.data.userId;
 
-      navigate(`/main/${ID}`);
+      navigate(`/main/${id}`);
     } catch (error) {
       console.log(error);
     }
