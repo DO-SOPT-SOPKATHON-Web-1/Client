@@ -1,11 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
+import SUPER from "../assets/fonts/Super-Nought-Personal-Use.woff";
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
   * {
     box-sizing: border-box;
+     @font-face {
+        font-family: 'SUPER'; 
+        src: url(${SUPER}) format('woff');
+    }
   }
   
   html,
