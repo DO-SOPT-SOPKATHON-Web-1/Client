@@ -11,7 +11,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<OnBoardingPage />} />
-        <Route path="/sign" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/reciever" element={<ReceiverPage />} />
         <Route path="/agent" element={<AgentPage />} />
