@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import logo from "../assets/icons/logo.svg";
@@ -8,6 +9,7 @@ import twinkle2 from "../assets/imgs/twinkle2.png";
 import PinkButton from "../styles/CommonStyle";
 
 function OnBoardingPage() {
+  const navigate = useNavigate();
   const [Section3Visivle, setSection3Visivle] = useState(false);
   useEffect(() => {
     const scrollTimeout = setTimeout(() => {
@@ -43,7 +45,11 @@ function OnBoardingPage() {
       <GreyWrapper>
         <Sec3 $isVisible={Section3Visivle}>
           <Logo2 src={logo} alt="HDD" />
-          <ButtonWrapper>
+          <ButtonWrapper
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
             <PinkButton>시작하기</PinkButton>
           </ButtonWrapper>
         </Sec3>
