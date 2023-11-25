@@ -43,11 +43,13 @@ function AgentPage() {
   }, [location]);
 
   const handleSprinkle = async () => {
+    const path = location.pathname;
+    const idFromURL = path.substring(path.lastIndexOf("/") + 1);
     try {
       const response = await axios.post(
         "https://www.sopkathon-web-1.p-e.kr/api/letters/sprinkle",
         {
-          userId: 1,
+          userId: idFromURL,
         },
       );
 
@@ -113,7 +115,9 @@ function AgentPage() {
       <Cake src={cake} />
       <PinkButton onClick={handleSprinkle}>불 붙이기</PinkButton>
       <Info>
-        불을 붙여 {name}
+        불을 붙여
+        {' '}
+        {name}
         님의 편지를 보내주세요
       </Info>
       {renderCandles()}
