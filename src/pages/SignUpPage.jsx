@@ -1,10 +1,55 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function SignUpPage() {
   const [step, setStep] = useState("1");
+  const [username, setUsername] = useState("");
+  const [agentname, setAgentname] = useState("");
+  const [agentEmail, setagentEmail] = useState("");
+  const [userId, setUserId] = useState("");
+  let id;
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
+  const handleAgentname = (e) => {
+    setAgentname(e.target.value);
+  };
+  const handleAgentEmail = (e) => {
+    setagentEmail(e.target.value);
+  };
   const navigate = useNavigate();
+  const handle = async () => {
+    try {
+      const response = await axios.post(
+        `https://www.sopkathon-web-1.p-e.kr/api/users/identity`,
+        {
+          name: username,
+        },
+      );
+      id = response.data.data.userId;
+
+      navigate(`/main/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const buttonClick = async () => {
+    try {
+      const response = await axios.post(
+        ` https://www.sopkathon-web-1.p-e.kr/api/users`,
+        {
+          name: username,
+        },
+      );
+      navigate("/main");
+    } catch (error) {
+      if (error.response.status === 409) {
+        handle();
+      }
+    }
+  };
   return (
     <>
       {}
@@ -16,7 +61,10 @@ function SignUpPage() {
           <Info>
             <Header>케이크의 주인은 누구인가요? </Header>
             <InputBox>
-              <Input placeholder="이름을 입력해주세요." />
+              <Input
+                placeholder="이름을 입력해주세요."
+                onChange={handleUsername}
+              />
             </InputBox>
           </Info>
 
@@ -36,19 +84,26 @@ function SignUpPage() {
               성냥을 정해주세요
             </Header>
             <InputBox2>
-              <Input placeholder="이름을 입력해주세요." />
-              <Input placeholder="이메일을 입력해주세요." />
+              <Input
+                placeholder="이름을 입력해주세요."
+                onChange={handleAgentname}
+              />
+              <Input
+                placeholder="이메일을 입력해주세요."
+                onChange={handleAgentEmail}
+              />
               <Explain>
                 *성냥: 내가 죽은 후, 편지를 대신 보내주는 대리인
               </Explain>
             </InputBox2>
           </Info>
-          <Button onClick={() => navigate("/main")}>다음</Button>
+          <Button onClick={buttonClick}>다음</Button>
         </SignUpBox>
       )}
     </>
   );
 }
+
 const SignUpBox = styled.div`
   position: relative;
   display: flex;
