@@ -1,14 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const Router = () => {
+import OnBoardingPage from "../pages/OnBoardingPage";
+
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<OnBoardingPage />} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;
