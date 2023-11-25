@@ -35,11 +35,11 @@ function OnBoardingPage() {
         <Twinkle2 src={twinkle2} />
         <Logo src={LongLogo} alt="HAPPY DEATH DAY" />
         <Intro>
-          당신이 사랑한 이들이 죽음에 슬퍼하는 대신
+          내가 사랑하는 사람들이 나의 죽음에 대해
           <br />
-          당신을 행복하게 추억 할 수 있도록
+          슬퍼하지 않고, 나를 행복하게 기억하게끔
           <br />
-          그들에게 미리 보내두는 편지입니다.
+          그들에게 미리 보내는 편지입니다.
         </Intro>
       </Wrapper>
       <GreyWrapper>
