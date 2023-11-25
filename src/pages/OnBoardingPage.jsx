@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import logo from "../assets/icons/logo.svg";
 import LongLogo from "../assets/icons/Longlogo.svg";
+import PinkButton from "../styles/CommonStyle";
 
 function OnBoardingPage() {
   const [Section3Visivle, setSection3Visivle] = useState(false);
@@ -44,6 +45,7 @@ function OnBoardingPage() {
             <br />
             그들에게 미리 보내두는 편지입니다.
           </Intro>
+          <PinkButton>시작하기</PinkButton>
         </Sec3>
       </GreyWrapper>
     </>
