@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import CloseLogo from "../assets/icons/close_24px.svg";
@@ -8,6 +10,31 @@ import ChoiceBlue from "../assets/icons/Ellipse15.svg";
 import PinkButton from "../styles/CommonStyle";
 
 function LetterPopup({ setIsShow }) {
+  const [receiverName, setReceiverName] = useState("");
+  const [receiverEmail, setReceiverEmail] = useState("");
+  const [candleColor, setCandleColor] = useState("");
+  const [letterContent, setLetterContent] = useState("");
+
+  const params = useParams();
+
+  const writeLetter = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/letters`,
+        {
+          userId: params.ID,
+          name: receiverName,
+          toEmail: receiverEmail,
+          color: candleColor,
+          content: letterContent,
+        },
+      );
+      alert(response.message);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <PopUpContainer>
       <CloseButton
@@ -21,24 +48,31 @@ function LetterPopup({ setIsShow }) {
       <InfoInput
         type="text"
         placeholder="편지 받을 사람의 이름을 입력해 주세요."
+        onChange={(e) => setReceiverName(e.target.value)}
       />
       <InfoInput
         type="text"
         placeholder="편지 받을 사람의 이메일을 입력해 주세요."
+        onChange={(e) => setReceiverEmail(e.target.value)}
       />
       <ColorPalette>
-        <BtnWrapper type="button">
+        <BtnWrapper type="button" onClick={setCandleColor("RED")}>
           <BtnImg src={ChoiceRed} alt="choicered" />
         </BtnWrapper>
-        <BtnWrapper type="button">
+        <BtnWrapper type="button" onClick={setCandleColor("PURPLE")}>
           <BtnImg src={ChoicePurple} alt="choicepurple" />
         </BtnWrapper>
-        <BtnWrapper type="button">
+        <BtnWrapper type="button" onClick={setCandleColor("BLUE")}>
           <BtnImg src={ChoiceBlue} alt="choiceblue" />
         </BtnWrapper>
       </ColorPalette>
-      <WritingBox placeholder="내용을 입력해주세요" />
-      <PinkButton>초 꽂기</PinkButton>
+      <WritingBox
+        placeholder="내용을 입력해주세요"
+        onChange={(e) => setLetterContent(e.target.value)}
+      />
+      <PinkButton type="button" onClick={writeLetter}>
+        초 꽂기
+      </PinkButton>
     </PopUpContainer>
   );
 }
