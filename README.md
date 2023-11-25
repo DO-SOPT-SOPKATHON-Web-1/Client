@@ -78,7 +78,7 @@
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
 
-<a href="https://rumbling-niece-12d.notion.site/3ffcd7b4508b439d826411956c69bf0d?pvs=4">노션링크</a>
+<a href="https://rumbling-niece-12d.notion.site/3ffcd7b4508b439d826411956c69bf0d?pvs=4](https://ajar-tarsier-b8b.notion.site/0dd8f1d9d7ba415c812fd025ecef7096?pvs=4">노션링크</a>
 
 <br/>
 
