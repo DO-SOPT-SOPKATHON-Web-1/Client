@@ -46,6 +46,7 @@ function SignUpPage() {
         },
       );
       console.log(response);
+
       navigate(`/main/${userId}`);
     } catch (error) {
       console.log(error);
