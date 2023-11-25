@@ -66,7 +66,7 @@ const Text = styled.span`
 `;
 
 const WritingBox = styled.textarea`
-  width: 31.1rem;
+  width: 100%;
   height: 25.4rem;
   color: ${({ theme }) => theme.colors.gray09};
   background-color: ${({ theme }) => theme.colors.subRed};
