@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 function ReadLetter() {
-  const params = useParams();
   const location = useLocation();
 
-  const [info, setInfo] = useState({});
-
+  const [to, setTo] = useState("");
+  const [from, setFrom] = useState("");
+  const [info, setInfo] = useState("");
   useEffect(() => {
     const readData = async () => {
       const path = location.pathname;
@@ -18,7 +18,10 @@ function ReadLetter() {
         const response = await axios.get(
           `https://www.sopkathon-web-1.p-e.kr/api/letters/${idFromURL}`,
         );
-        setInfo(response.data);
+        console.log(response);
+        setTo(response.data.data.toName);
+        setInfo(response.data.data.content);
+        setFrom(response.data.data.fromName);
       } catch (err) {
         console.log(err);
       }
@@ -29,12 +32,12 @@ function ReadLetter() {
     <PopUpContainer>
       <Text>
         To.
-        {info.toName}
+        {to}
       </Text>
-      <WritingBox>{info.content}</WritingBox>
+      <WritingBox value={info} />
       <Text className="sender">
         From.
-        {info.fromName}
+        {from}
       </Text>
     </PopUpContainer>
   );
