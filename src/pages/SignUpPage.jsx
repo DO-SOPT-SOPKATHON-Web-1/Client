@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function SignUpPage() {
   const [step, setStep] = useState("1");
+  const navigate = useNavigate();
   return (
     <>
       {}
@@ -41,7 +43,7 @@ function SignUpPage() {
               </Explain>
             </InputBox2>
           </Info>
-          <Button onClick={() => setStep("2")}>다음</Button>
+          <Button onClick={() => navigate("/main")}>다음</Button>
         </SignUpBox>
       )}
     </>
