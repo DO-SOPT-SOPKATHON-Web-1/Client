@@ -20,7 +20,7 @@ function LetterPopup({ setIsShow }) {
   const writeLetter = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/api/letters`,
+        "https://www.sopkathon-web-1.p-e.kr/api/letters",
         {
           userId: params.ID,
           name: receiverName,

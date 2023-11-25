@@ -11,7 +11,7 @@ function ReadLetter() {
     const readData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/api/letters${params.letterId}`,
+          `https://www.sopkathon-web-1.p-e.kr/api/letters${params.letterId}`,
         );
         setInfo(response.data);
       } catch (err) {
