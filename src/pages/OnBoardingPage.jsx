@@ -38,14 +38,9 @@ function OnBoardingPage() {
       <GreyWrapper>
         <Sec3 $isVisible={Section3Visivle}>
           <Logo src={logo} alt="HDD" />
-          <Intro>
-            당신이 사랑한 이들이 죽음에 슬퍼하는 대신
-            <br />
-            당신을 행복하게 추억 할 수 있도록
-            <br />
-            그들에게 미리 보내두는 편지입니다.
-          </Intro>
-          <PinkButton>시작하기</PinkButton>
+          <ButtonWrapper>
+            <PinkButton>시작하기</PinkButton>
+          </ButtonWrapper>
         </Sec3>
       </GreyWrapper>
     </>
@@ -68,7 +63,7 @@ const Sec3 = styled(Wrapper)`
 `;
 
 const Logo = styled.img`
-  padding-top: 17.7rem;
+  padding-top: 20.2rem;
   display: block;
   margin: 0 auto;
   width: 200px;
@@ -83,6 +78,10 @@ const Intro = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
+`;
+
+const ButtonWrapper = styled.div`
+  padding-top: 70%;
 `;
 const GreyWrapper = styled.div`
   opacity: 1;
