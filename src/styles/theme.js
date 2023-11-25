@@ -5,6 +5,10 @@ const colors = {
   white: "#FFFDFD",
   black: "#181818",
 
+  subRed: "#EDD8E0",
+  subPurple: "#EADCF7",
+  subBlue: "#E4EEFF",
+
   gray01: "#FAFAFA",
   gray02: "#F5F5F5",
   gray03: "#EEEEEE",
