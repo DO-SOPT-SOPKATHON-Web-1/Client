@@ -9,7 +9,7 @@ function SignUpPage() {
   const [agentname, setAgentname] = useState("");
   const [agentEmail, setagentEmail] = useState("");
   const [userId, setUserId] = useState("");
-  let id;
+
   const handleUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -20,6 +20,23 @@ function SignUpPage() {
     setagentEmail(e.target.value);
   };
   const navigate = useNavigate();
+  const buttonClick2 = async () => {
+    try {
+      const patchUserResponse = await axios.patch(
+        "https://www.sopkathon-web-1.p-e.kr/api/users",
+        {
+          userId,
+          friendName: agentname,
+          friendEmail: agentEmail,
+        },
+      );
+      console.log(patchUserResponse);
+      navigate(`/main/${userId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handle = async () => {
     try {
       const response = await axios.post(
@@ -28,27 +45,32 @@ function SignUpPage() {
           name: username,
         },
       );
-      id = response.data.data.userId;
+      console.log(response);
 
-      navigate(`/main/${id}`);
+      navigate(`/main/${userId}`);
     } catch (error) {
       console.log(error);
     }
   };
+
   const buttonClick = async () => {
     try {
-      const response = await axios.post(
+      const createUserResponse = await axios.post(
         ` https://www.sopkathon-web-1.p-e.kr/api/users`,
         {
           name: username,
         },
       );
-      navigate("/main");
+      setUserId(createUserResponse.data.data.userId);
+      setStep(2);
     } catch (error) {
       if (error.response.status === 409) {
         handle();
       }
     }
+  };
+  const setAgent = () => {
+    buttonClick();
   };
   return (
     <>
@@ -68,7 +90,7 @@ function SignUpPage() {
             </InputBox>
           </Info>
 
-          <Button onClick={() => setStep("2")}>다음</Button>
+          <Button onClick={setAgent}>다음</Button>
         </SignUpBox>
       ) : (
         <SignUpBox>
@@ -97,7 +119,7 @@ function SignUpPage() {
               </Explain>
             </InputBox2>
           </Info>
-          <Button onClick={buttonClick}>다음</Button>
+          <Button onClick={buttonClick2}>다음</Button>
         </SignUpBox>
       )}
     </>
