@@ -1,17 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 function ReadLetter() {
   const params = useParams();
+  const location = useLocation();
+
   const [info, setInfo] = useState({});
 
   useEffect(() => {
     const readData = async () => {
+      const path = location.pathname;
+      const idFromURL = path.substring(path.lastIndexOf("/") + 1);
+
       try {
         const response = await axios.get(
-          `https://www.sopkathon-web-1.p-e.kr/api/letters${params.letterId}`,
+          `https://www.sopkathon-web-1.p-e.kr/api/letters/${idFromURL}`,
         );
         setInfo(response.data);
       } catch (err) {
