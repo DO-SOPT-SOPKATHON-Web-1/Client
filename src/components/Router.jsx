@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import OnBoardingPage from "../pages/OnBoardingPage";
+import LetterPopup from "./LetterPopup";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<OnBoardingPage />} />
+        <Route path="/" element={<LetterPopup />} />
       </Routes>
     </BrowserRouter>
   );

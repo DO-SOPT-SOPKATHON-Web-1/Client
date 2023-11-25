@@ -10,4 +10,6 @@ export default LetterPopup;
 const WritingBox = styled.input`
   width: 31.1rem;
   height: 25.4rem;
+  color: ${({ theme }) => theme.colors.gray09};
+  border-radius: 1.2rem;
 `;
