@@ -7,10 +7,15 @@ import ChoicePurple from "../assets/icons/Ellipse14.svg";
 import ChoiceBlue from "../assets/icons/Ellipse15.svg";
 import PinkButton from "../styles/CommonStyle";
 
-function LetterPopup() {
+function LetterPopup({ setIsShow }) {
   return (
     <PopUpContainer>
-      <CloseButton type="button">
+      <CloseButton
+        type="button"
+        onClick={() => {
+          setIsShow(false);
+        }}
+      >
         <BtnImg src={CloseLogo} alt="closebtn" />
       </CloseButton>
       <InfoInput
@@ -41,6 +46,8 @@ function LetterPopup() {
 export default LetterPopup;
 
 const PopUpContainer = styled.section`
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
