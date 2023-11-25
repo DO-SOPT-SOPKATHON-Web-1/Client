@@ -56,12 +56,13 @@ const PopUpContainer = styled.section`
   padding: 7.7rem 3.2rem 3.9rem;
 `;
 
-const Text = styled.span`
+const Text = styled.div`
   color: ${({ theme }) => theme.colors.white};
   ${({ theme }) => theme.fonts.headline2};
+  width: 100%;
+  display: flex;
 
   &.sender {
-    display: flex;
     justify-content: flex-end;
   }
 `;
