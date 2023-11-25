@@ -48,6 +48,7 @@ export default ReadLetter;
 const PopUpContainer = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   width: 100%;
   height: 100vh;
