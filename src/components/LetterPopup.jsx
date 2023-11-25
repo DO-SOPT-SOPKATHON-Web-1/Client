@@ -21,13 +21,6 @@ function LetterPopup({ setIsShow }) {
     const path = location.pathname;
     const idFromURL = path.substring(path.lastIndexOf("/") + 1);
     try {
-      console.log(
-        receiverName,
-        idFromURL,
-        receiverEmail,
-        candleColor,
-        letterContent,
-      );
       const response = await axios.post(
         "https://www.sopkathon-web-1.p-e.kr/api/letters",
         {
@@ -39,7 +32,6 @@ function LetterPopup({ setIsShow }) {
           content: letterContent,
         },
       );
-
       console.log(response);
       setIsShow(false);
     } catch (err) {
@@ -96,16 +88,17 @@ const PopUpContainer = styled.section`
   top: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 2rem;
   width: 100%;
+  max-width: 43rem;
   height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
   padding: 7.7rem 3.2rem 3.9rem;
 `;
 
 const CloseButton = styled.button`
-  position: fixed;
+  position: absolute;
   top: 2.3rem;
   right: 3.2rem;
 
@@ -129,6 +122,9 @@ const InfoInput = styled.input`
 `;
 
 const ColorPalette = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
   margin-top: 1rem;
 `;
 
