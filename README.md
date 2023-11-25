@@ -2,7 +2,7 @@
 
 <h2> 🩰˚˖𓍢ִ໋ 🎧✧˚.🎀༘⋆ 🕯️ 🎂 ✨ °｡ 💖 🌷  HDD 🎂 ✨ ✩ 🎀°｡ 🎧⋆⸜ 🌷 💖✧˚ 🩰˚˖𓍢ִ໋ </h2>
 
-<img src=""  alt="서비스대표-이미지" />
+<img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/101045330/53055ab9-1553-4907-974e-7536d64e8cd6"  alt="서비스대표-이미지" />
 <div>HAPPY DEATH DAY</div>
 
 </div>
@@ -58,13 +58,13 @@
     </tr>
   	<tr align="center">
        <td>
-            (역할분담) <br/>
+            온보딩 페이지 뷰 <br/>
       </td>
        <td>
-            (역할분담) <br/>
+           정보 입력 / 편지 화면 뷰  <br/>
       </td>
        <td>
-            (역할분담) <br/>
+            케이크 (메인) 화면 뷰 <br/>
       </td>
     </tr>
 </table>
@@ -88,6 +88,9 @@
 📁 src
 └── 📁 apis
 └── 📁 assets
+    └── 📁 fonts
+    └── 📁 icons
+    └── 📁 images
 └── 📁 components
 │   └── common
 └── 📁 components
@@ -104,7 +107,7 @@
 
 <h2>웨비 Before and After</h2>
 <h3>Before</h3>
-<img src="" alt="웨비 팀원들 사진 (before)"/>
- 
+<img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/101045330/0d45f658-b8e4-40df-ad67-13b3dee36683" alt="웨비 팀원들 사진 (before)"/>
+
 <h3>After</h3>
 <img src="" alt="웨비 팀원들 사진 (after)"/>
