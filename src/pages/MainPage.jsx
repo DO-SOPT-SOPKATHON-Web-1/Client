@@ -13,6 +13,7 @@ function MainPage() {
   const showSendLetter = () => {
     setIsShow((prev) => !prev);
   };
+
   return (
     <Wrapper>
       <Title>김해피님의 케이크</Title>
