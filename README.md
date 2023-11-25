@@ -111,4 +111,5 @@
 <img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/101045330/0d45f658-b8e4-40df-ad67-13b3dee36683" alt="웨비 팀원들 사진 (before)"/>
 
 <h3>After</h3>
-<img src="" alt="웨비 팀원들 사진 (after)"/>
+<img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/101045330/b67f7e17-7df6-455a-b6e7-eb74f679e8b9" alt="웨비 팀원들 사진 (after)"/>
+
