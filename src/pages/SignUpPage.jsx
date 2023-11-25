@@ -83,6 +83,7 @@ const Header = styled.div`
   text-align: center;
   margin-bottom: 3.2rem;
   color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => theme.fonts.headline2};
   font-family: Pretendard Variable;
   font-size: 2rem;
   font-weight: 600;
@@ -97,6 +98,7 @@ const InputBox = styled.div`
 const Input = styled.input`
   padding: 1.4rem 1.7rem;
   border-radius: 1.2rem;
+  ${({ theme }) => theme.fonts.body2};
   border: none;
   background-color: ${({ theme }) => theme.colors.gray09};
 `;
@@ -107,6 +109,7 @@ const InputBox2 = styled(InputBox)`
 const Explain = styled.p`
   color: ${({ theme }) => theme.colors.gray06};
   align-self: center;
+  font-size: 1.2rem;
 `;
 const Button = styled.button`
   position: absolute;
@@ -118,6 +121,12 @@ const Button = styled.button`
   border: none;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
+  font-family: Pretendard Variable;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
 `;
 
 export default SignUpPage;
