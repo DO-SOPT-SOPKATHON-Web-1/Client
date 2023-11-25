@@ -12,9 +12,9 @@ function Router() {
       <Routes>
         <Route path="/" element={<OnBoardingPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/main:id" element={<MainPage />} />
-        <Route path="/reciever:id" element={<ReceiverPage />} />
-        <Route path="/agent:id" element={<AgentPage />} />
+        <Route path="/main/:id" element={<MainPage />} />
+        <Route path="/reciever/:id" element={<ReceiverPage />} />
+        <Route path="/agent/:id" element={<AgentPage />} />
       </Routes>
     </BrowserRouter>
   );

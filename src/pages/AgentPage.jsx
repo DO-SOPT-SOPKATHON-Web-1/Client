@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import cake from "../assets/imgs/cake.png";
@@ -9,6 +10,26 @@ import cpurple from "../assets/imgs/candlepurple.png";
 import PinkButton from "../styles/CommonStyle";
 
 function AgentPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const path = location.pathname;
+      const idFromURL = path.substring(path.lastIndexOf("/") + 1);
+      try {
+        const response = await axios.post(
+          "https://www.sopkathon-web-1.p-e.kr/api/letters/all",
+          {
+            userId: idFromURL,
+          },
+        );
+        console.log("Response:", response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [location]);
   const handleSprinkle = async () => {
     try {
       const response = await axios.post(
