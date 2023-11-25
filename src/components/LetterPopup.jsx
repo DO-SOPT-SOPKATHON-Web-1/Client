@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import CloseLogo from "../assets/icons/close_24px.svg";
@@ -15,21 +15,27 @@ function LetterPopup({ setIsShow }) {
   const [candleColor, setCandleColor] = useState("");
   const [letterContent, setLetterContent] = useState("");
 
-  const params = useParams();
+  const location = useLocation();
 
   const writeLetter = async () => {
+    const path = location.pathname;
+    const idFromURL = path.substring(path.lastIndexOf("/") + 1);
     try {
+      console.log(receiverName, idFromURL, receiverEmail, candleColor, letterContent);
       const response = await axios.post(
         "https://www.sopkathon-web-1.p-e.kr/api/letters",
         {
-          userId: params.ID,
+          userId: idFromURL,
+
           name: receiverName,
           toEmail: receiverEmail,
           color: candleColor,
           content: letterContent,
         },
       );
-      alert(response.message);
+
+      console.log(response);
+      setIsShow(false);
     } catch (err) {
       console.log(err);
     }
@@ -56,13 +62,15 @@ function LetterPopup({ setIsShow }) {
         onChange={(e) => setReceiverEmail(e.target.value)}
       />
       <ColorPalette>
-        <BtnWrapper type="button" onClick={setCandleColor("RED")}>
+
+        <BtnWrapper type="button" onClick={() => setCandleColor("RED")}>
           <BtnImg src={ChoiceRed} alt="choicered" />
         </BtnWrapper>
-        <BtnWrapper type="button" onClick={setCandleColor("PURPLE")}>
+        <BtnWrapper type="button" onClick={() => setCandleColor("PURPLE")}>
           <BtnImg src={ChoicePurple} alt="choicepurple" />
         </BtnWrapper>
-        <BtnWrapper type="button" onClick={setCandleColor("BLUE")}>
+        <BtnWrapper type="button" onClick={() => setCandleColor("BLUE")}>
+
           <BtnImg src={ChoiceBlue} alt="choiceblue" />
         </BtnWrapper>
       </ColorPalette>
