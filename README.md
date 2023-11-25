@@ -10,13 +10,14 @@
 <h2> ✨ 본인의 죽음이 너무 슬프지 않았으면 하는 사람들을 위한 편지 전송 서비스  </h2>
 
 <h3> 1️⃣ (기능) </h3>
-<img src=""  alt="기능1-대표이미지" />
-<div ><strong> (강조단어) </strong> (기능설명)  <br/></div>
+<img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/46593078/120d5578-bc14-4a08-99d7-ccd21ff81ec1"  alt="기능1-대표이미지" />
+<div ><strong>  편지 초 만들기 + 초 꽂기 기능 </strong>: 죽기 전 사랑하는 이들에게 편지를 미리 작성해둘 수 있음 > 죽음을 조금 더 가볍게 준비<br/></div>
+
 
 
 <h3> 2️⃣ (기능) </h3>
-<img src=""  alt="기능1-대표이미지" />
-<div ><strong> (강조단어) </strong> (기능설명)  <br/></div>
+<img src="https://github.com/DO-SOPT-SOPKATHON-Web-1/Client/assets/46593078/d16f9dc2-0c8b-4744-97ec-174486b97cf7"  alt="기능1-대표이미지" />
+<div ><strong>성냥(대리인)의 ‘불 붙여 편지 보내기’ 기능 </strong>고인의 편지들이 각 수취인 이메일로 전송됨 > 죽음을 슬프게만 바라보지 않을 수 있음 <br/></div>
 
 
 <h2> 👥 Team </h2>
