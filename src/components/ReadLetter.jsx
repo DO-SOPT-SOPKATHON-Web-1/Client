@@ -1,17 +1,36 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-import CloseLogo from "../assets/icons/close_24px.svg";
-
 function ReadLetter() {
+  const params = useParams();
+  const [info, setInfo] = useState({});
+
+  useEffect(() => {
+    const readData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/api/letters${params.letterId}`,
+        );
+        setInfo(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    readData();
+  }, []);
   return (
     <PopUpContainer>
-      <CloseButton type="button">
-        <BtnImg src={CloseLogo} alt="closebtn" />
-      </CloseButton>
-      <Text>To.</Text>
-      <WritingBox placeholder="내용을 입력해주세요" />
-      <Text className="sender">From.</Text>
+      <Text>
+        To.
+        {info.toName}
+      </Text>
+      <WritingBox>{info.content}</WritingBox>
+      <Text className="sender">
+        From.
+        {info.fromName}
+      </Text>
     </PopUpContainer>
   );
 }
@@ -28,15 +47,6 @@ const PopUpContainer = styled.section`
   padding: 7.7rem 3.2rem 3.9rem;
 `;
 
-const CloseButton = styled.button`
-  position: fixed;
-  top: 2.3rem;
-  right: 3.2rem;
-
-  background-color: transparent;
-  border: none;
-`;
-
 const Text = styled.span`
   color: ${({ theme }) => theme.colors.white};
   ${({ theme }) => theme.fonts.headline2};
@@ -45,10 +55,6 @@ const Text = styled.span`
     display: flex;
     justify-content: flex-end;
   }
-`;
-
-const BtnImg = styled.img`
-  object-fit: contain;
 `;
 
 const WritingBox = styled.textarea`
