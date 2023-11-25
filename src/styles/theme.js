@@ -22,35 +22,35 @@ const colors = {
 
 const fonts = {
   headline1: css`
-    font-family: Pretendard Variable;
+    font-family: Pretendard;
     font-size: 2.8rem;
     font-weight: 700;
 
     line-height: 100%;
   `,
   headline2: css`
-    font-family: Pretendard Variable;
+    font-family: Pretendard;
     font-size: 2rem;
     font-weight: 600;
 
     line-height: 144%;
   `,
   body1: css`
-    font-family: Pretendard Variable;
+    font-family: Pretendard;
     font-size: 1.4rem;
     font-weight: 700;
 
     line-height: 120%;
   `,
   body2: css`
-    font-family: Pretendard Variable;
+    font-family: Pretendard;
     font-size: 1.6rem;
     font-weight: 500;
 
     line-height: 144%;
   `,
   button3: css`
-    font-family: Pretendard Variable;
+    font-family: Pretendard;
     font-size: 1.8rem;
     font-weight: 700;
 
