@@ -14,6 +14,7 @@ function LetterPopup({ setIsShow }) {
   const [receiverEmail, setReceiverEmail] = useState("");
   const [candleColor, setCandleColor] = useState("");
   const [letterContent, setLetterContent] = useState("");
+
   const location = useLocation();
 
   const writeLetter = async () => {
@@ -25,12 +26,14 @@ function LetterPopup({ setIsShow }) {
         "https://www.sopkathon-web-1.p-e.kr/api/letters",
         {
           userId: idFromURL,
+
           name: receiverName,
           toEmail: receiverEmail,
           color: candleColor,
           content: letterContent,
         },
       );
+
       console.log(response);
       setIsShow(false);
     } catch (err) {
@@ -59,6 +62,7 @@ function LetterPopup({ setIsShow }) {
         onChange={(e) => setReceiverEmail(e.target.value)}
       />
       <ColorPalette>
+
         <BtnWrapper type="button" onClick={() => setCandleColor("RED")}>
           <BtnImg src={ChoiceRed} alt="choicered" />
         </BtnWrapper>
@@ -66,6 +70,7 @@ function LetterPopup({ setIsShow }) {
           <BtnImg src={ChoicePurple} alt="choicepurple" />
         </BtnWrapper>
         <BtnWrapper type="button" onClick={() => setCandleColor("BLUE")}>
+
           <BtnImg src={ChoiceBlue} alt="choiceblue" />
         </BtnWrapper>
       </ColorPalette>
