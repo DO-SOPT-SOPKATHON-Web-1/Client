@@ -48,6 +48,7 @@ export default ReadLetter;
 const PopUpContainer = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   width: 100%;
   height: 100vh;
@@ -66,7 +67,7 @@ const Text = styled.span`
 `;
 
 const WritingBox = styled.textarea`
-  width: 31.1rem;
+  width: 100%;
   height: 25.4rem;
   color: ${({ theme }) => theme.colors.gray09};
   background-color: ${({ theme }) => theme.colors.subRed};
