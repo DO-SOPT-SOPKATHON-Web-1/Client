@@ -45,8 +45,8 @@ function SignUpPage() {
           name: username,
         },
       );
-      console.log(response.data.data.userId);
-      navigate(`/main/${response.data.data.userId}`);
+      console.log(response);
+      navigate(`/main/${userId}`);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,7 @@ function SignUpPage() {
           name: username,
         },
       );
-
+      setUserId(createUserResponse.data.data.userId);
       setStep(2);
     } catch (error) {
       if (error.response.status === 409) {
