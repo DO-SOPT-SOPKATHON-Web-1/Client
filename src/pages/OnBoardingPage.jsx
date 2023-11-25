@@ -64,6 +64,9 @@ const PageWrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  &::-webkit-scrollbar {
+    height: 0;
+  }
 `;
 const Twinkle1 = styled.img`
   position: absolute;
